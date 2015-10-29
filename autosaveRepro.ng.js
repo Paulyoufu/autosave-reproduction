@@ -75,12 +75,14 @@ function route1Controller($scope, $meteor) {
 
     $scope.$meteorSubscribe('Collection1');
 
-    $scope.$meteorCollection(
-        function(){
-            return Collection1.find({ _id: 'HHetzpkuqukhFr4i4' });
-        }
-    );
+    // This does not trigger autosave as soon as the route is loaded
+    // $scope.$meteorCollection(
+    //     function(){
+    //         return Collection1.find({ _id: 'HHetzpkuqukhFr4i4' });
+    //     }
+    // );
 
+    // This triggers autosave as soon as the route is loaded
     $scope.$meteorObject(Collection1, 'HHetzpkuqukhFr4i4');
 
     // $scope.$meteorAutorun(
