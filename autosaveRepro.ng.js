@@ -83,7 +83,7 @@ function route1Controller($scope, $meteor) {
     // );
 
     // This triggers autosave as soon as the route is loaded
-    $scope.$meteorObject(Collection1, 'HHetzpkuqukhFr4i4');
+    vm.item1 = $scope.$meteorObject(Collection1, 'HHetzpkuqukhFr4i4');
 
     // $scope.$meteorAutorun(
     //     function() {
