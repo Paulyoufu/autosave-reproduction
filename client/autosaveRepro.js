@@ -19,7 +19,7 @@ function AppConfig($stateProvider, $urlRouterProvider) {
                 '': {
                     controller: 'Route1Controller',
                     controllerAs: 'vm',
-                    templateUrl: 'route1.ng.html'
+                    templateUrl: 'route1.html'
                 }
             },
             resolve: {
@@ -33,7 +33,7 @@ function AppConfig($stateProvider, $urlRouterProvider) {
                 '': {
                     controller: 'Route2Controller',
                     controllerAs: 'vm',
-                    templateUrl: 'route2.ng.html'
+                    templateUrl: 'route2.html'
                 }
             },
             resolve: {
@@ -76,11 +76,11 @@ function route1Controller($scope, $meteor) {
     $scope.$meteorSubscribe('Collection1');
 
     // This does not trigger autosave as soon as the route is loaded
-    // $scope.$meteorCollection(
-    //     function(){
-    //         return Collection1.find({ _id: 'HHetzpkuqukhFr4i4' });
-    //     }
-    // );
+    $scope.$meteorCollection(
+        function(){
+            return Collection1.find({ _id: 'HHetzpkuqukhFr4i4' });
+        }
+    );
 
     // This triggers autosave as soon as the route is loaded
     vm.item1 = $scope.$meteorObject(Collection1, 'HHetzpkuqukhFr4i4');
